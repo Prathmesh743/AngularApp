@@ -1,0 +1,45 @@
+<div class="container">
+    <h1>Create New Post </h1>
+    <form [formGroup]= "createPost" (ngSubmit)="SubmitForm(createPost)">
+      <div class="form-group">
+        <label>UserId</label>
+        <input type="text" class="form-control" formControlName="userId">
+        <p *ngIf= "createPost.controls.userId.errors?.['required'] && createPost.controls.userId.touched">
+            User Id is Required
+        </p>
+        <p *ngIf= "createPost.controls.userId.errors?.['pattern'] && createPost.controls.userId.touched">
+            User Id should be Numeric
+        </p>
+      </div>
+      <div class="form-group">
+        <label>Post Id</label>
+        <input type="text" class="form-control" formControlName="id">
+        <p *ngIf= "createPost.controls.id.errors?.['required'] && createPost.controls.id.touched">
+            Post Id is Required
+        </p>
+        <p *ngIf= "createPost.controls.id.errors?.['pattern'] && createPost.controls.id.touched">
+            Post Id should be Numeric
+        </p>
+      </div>
+       <div class="form-group">
+        <label>Post Title</label>
+        <input type="text" class="form-control" formControlName="title">
+        <p *ngIf= "createPost.controls.title.errors?.['required'] && createPost.controls.title.touched">
+            Post Title is Required
+        </p>
+        <p *ngIf= "createPost.controls.title.errors?.['vulgerMsg'] && createPost.controls.title.touched">
+            Post contain vulger words
+        </p>
+      </div>
+      <div class="form-group">
+        <label>Post Body</label>
+        <input type="text" class="form-control" formControlName="body">
+        <p *ngIf= "createPost.controls.body.errors?.['required'] && createPost.controls.body.touched">
+           Post Body is Required
+        </p>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <br />
+  </div>
+  

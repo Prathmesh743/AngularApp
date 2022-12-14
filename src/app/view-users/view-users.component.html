@@ -1,0 +1,22 @@
+<table class="table align-middle mb-0 bg-white" *ngIf= "check">
+    <thead class="bg-light">
+      <tr>
+        <th>userId</th>
+        <th>id</th>
+        <th>title</th>
+        <th>body</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor= "let user of userData">
+        <td>{{user.userId}}</td>
+        <td>{{user.id}}</td>
+        <td>{{user.title}}</td>
+        <td>{{user.body}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf= "!check">
+    <p>No posts Data available
+  </div> 
+
